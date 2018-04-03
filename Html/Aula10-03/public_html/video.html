@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Video</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDKMlql5JGtgCYSFFbDZt5Hm9ppZno5ZkA"></script>
+    </head>
+    <style>
+        .btn{
+            padding: 10px;
+        }
+        .btn-default{
+            background: transparent;
+            border: 1px solid lightgray;
+        }
+        .btn-default:hover{
+            background: gray;
+            color: #fff;
+            font-weight: bold;
+            margin: 5px;
+        }
+        .televisao
+        {
+            width: 73%;
+            height: auto;
+            padding-top: 10px;
+            padding-bottom: 1px;
+            background: black;
+        }
+        .marca
+        {
+                width: 98%;
+                padding: 10px;
+                background: #efefef5c;
+                color: black;
+                font-weight: bold;
+                font-family: Arial Black;
+                text-transform: uppercase;
+        }
+        .pe-televisao
+        {
+            width: 50px;
+            height: 70px;
+            background: black;
+            paddng: 20px;
+        }
+        .base-televisao
+        {
+            width: 45%;
+            height: 20px;
+            background: black;
+            paddng: 20px;
+        }
+    </style>
+    <body>
+        <h1>Video</h1>
+        
+        
+        <div align="center">
+            <div class="televisao">
+                <video id="video">
+                    <source src="video.mp4" type="video/mp4">
+                </video>
+                <div class="marca">
+                    <h1>sony</h1>
+                </div>
+            </div>
+            <div class="pe-televisao"></div>
+            <div class="base-televisao"></div>
+        </div>
+        
+        <div align="center">
+            <button type="button" class="btn btn-default" onclick="tocar()">Play</button>
+            <button type="button" class="btn btn-default" onclick="parar()">Stop</button>
+        </div>
+        
+        <script>
+            var video = document.getElementById("video");
+            function tocar()
+            {
+                video.play();
+            }
+            
+            function parar()
+            {
+                video.pause();
+            }
+        </script>
+        
+    </body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Geolocalização</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyDKMlql5JGtgCYSFFbDZt5Hm9ppZno5ZkA"></script>
+    </head>
+    <style>
+        .btn{
+            padding: 10px;
+        }
+        .btn-default{
+            background: transparent;
+            border: 1px solid lightgray;
+        }
+        .btn-default:hover{
+            background: gray;
+            color: #fff;
+            font-weight: bold;
+            margin: 5px;
+        }
+        #mapa {
+            margin-top: 20px;
+            width: 600px;
+            height: 400px;
+            background: #f9f9f96b;            
+        }
+        input {
+            width: 50%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid lightgray;
+        }
+    </style>
+    <body>
+        <div align="center">
+            <h1>Traçar destino</h1> 
+            <input type="text" id="origem" placeholder="Informe a Origem">
+            <br>
+            <input type="text" id="destino" placeholder="Informe o Destino">
+            <br>
+            <button type="button" class="btn btn-default" onclick="calculaDestino()">Calcular Destino</button>
+            
+            <div id="mapa"></div>
+            <div id="msg"></div>
+            
+        </div>
+        
+        <script>
+            
+            var msg = document.getElementById("msg");
+            var directionsDisplay;
+            var directionsService = new google.maps.DirectionsService();
+            
+            function getGeolocation()
+            {
+                //Verificar se o navegador possui suporte a geolocalização
+                if( navigator.geolocation ) 
+                {
+                    //Pegar Localização
+                    navigator.geolocation.getCurrentPosition(showPosition, showError);
+                }else 
+                {
+                    alert("Seu navegador não possui suporte a geolocalização");
+                }
+            }
+            
+            //Função para retornar a geolocalização
+            function showPosition(position)
+            {
+                directionsDisplay = new google.maps.DirectionsRenderer();
+                
+                lat = position.coords.latitude;
+                lon = position.coords.longitude;
+                
+                //Variavel com os valores concatenados com texto
+                texto = "Latitude: "+lat+" Longitude: "+lon;
+               
+                msg.innerHTML = texto;
+                
+                //Carregamento do Mapa
+                mapa = document.getElementById("mapa");
+                
+                //Definir uma variavel com as 2 posicoes Latitude e Longitude
+                latlon = new google.maps.LatLng(lat, lon);
+                
+                //Opções do Mapa
+                myOptions = {
+                    zoom: 15,
+                    center: latlon,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP
+                };
+                //Carregar o Mapa
+                mapa = new google.maps.Map(mapa, myOptions);
+                
+                //Adicionar o DirectionDisplay no mapa
+                directionsDisplay.setMap(mapa);
+                
+            }
+            
+            function showError(error)
+            {
+                switch(error.code)
+                {
+                    case error.PERMISSON_DENIED:
+                        msg.innerHTML = "Pedido de Geolocalização negado";
+                        break;
+                    case error.POSITION_UNAVALIABLE:
+                        msg.innerHTML = "Posição Indefinida";
+                        break;
+                    case error.TIMEOUT:
+                        msg.innerHTML = "Tempo Esgotado";
+                        break;
+                    case error.UNKNOWN_ERROR:
+                        msg.innerHTML = "Erro desconhecido";
+                        break;
+                }
+                    
+            }
+            
+            getGeolocation();
+            
+            //Função para calcular o destino
+            function calculaDestino()
+            {
+                //Qual o ponto de partida e qual o destino
+                var enderecoOrigem = document.getElementById("origem").value;
+                var enderecoDestino = document.getElementById("destino").value;
+                
+                var request = {
+                  origin: enderecoOrigem,
+                  destination: enderecoDestino,
+                  travelMode: google.maps.TravelMode.DRIVING
+                };
+                
+                //Criar a rota da Origem Para o Destino
+                directionsService.route(request, 
+                    function(result){
+                        //Adicionar no mapa
+                        directionsDisplay.setDirections(result);
+                    });
+                
+            }
+        </script>
+        
+    </body>
+</html>

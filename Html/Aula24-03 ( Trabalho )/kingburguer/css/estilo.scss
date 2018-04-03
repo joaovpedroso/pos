@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,800');
+
+$escura: #762823;
+$clara: #ed7801;
+$texto: "Open Sans", Tahoma;
+$menu: "Open Sans", Tahoma;
+@mixin margem{
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+@mixin sessao{
+    width: 100%;
+    padding: 30px 0;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+.white{
+    color: #fff!important;
+}
+.sobre{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.sub-sobre{
+    font: 25px "Open Sans", Tahoma;
+    text-align: center;
+    margin: 20px;
+    font-weight: 500;
+}
+.clear{
+    clear: both;
+}
+header{
+    width: 100%;
+    height: 600px;
+    background: url("../images/header.jpg") center;
+    
+    nav{
+        width: 100%;
+        .logo{
+            float: left;
+            margin: 5px;
+        }
+        ul{
+            float: right;
+            margin-top: 20px;
+            li{
+                display: inline;
+                color: $clara;
+                font: 20px $menu;
+                margin: 10px;
+                
+                a{
+                    color: $clara;
+                    text-decoration: none;
+                    padding: 10px;
+                    transition: all 1s;
+                    font-weight: 700;
+                    &:hover{
+                        background: $escura;
+                    }
+                }
+            }
+        }
+    }
+    .msg{
+        float: left;
+        width: 400px;
+        background: rgba(0,0,0, 0.6);
+        margin-left: 50px;
+        margin-top: 100px;
+        font-family: $texto;
+        color: $clara;
+        text-align: center;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 7px $clara;
+        p{
+            font-size: 24px;
+            margin: 10px;
+        }
+    }
+    .max{
+        float: right; 
+        margin-right: 50px;
+    }
+}
+#menu{
+    margin: 10px;
+    float: right;
+    background: $clara;
+    color: $escura;
+    border: 0px solid $escura;
+    border-radius: 5px;
+    padding: 10px;
+    display: none;
+    i{
+        font-size: 30px;
+    }
+}
+section {
+    @include sessao;
+    h1{
+        font: 36px $menu;
+        color: $escura;
+        text-align: center;
+        margin: 20px;
+        font-weight: 900;
+    }
+}
+.container{
+    width: 900px;
+    margin: auto;
+    display: flex;
+    /* flex-wrap: wrap; */
+    .coluna{
+        flex: 1;
+        border: 1px solid #ccc;
+        margin: 5px;
+        padding: 10px;
+        border-radius: 5px;
+        transition: all 0.5s;
+        font: 15px $texto;
+        text-align: center;
+        img{
+            width: 200px;
+        }
+        &:hover{
+            border-color: $escura;
+        }
+    }
+}
+#info{
+    background: url("../images/fogo.jpg") center fixed;
+    background-size: cover;
+    color: #fff;
+    i{
+        font-size: 60px;
+        margin: 10px;
+    }
+}
+footer{
+    height: 50px;
+    width: 100%;
+    background: #333;
+    color: #fff;
+    padding-bottom: 20px;
+    text-align: center;
+    
+    p{
+        padding-top: 24px;
+    }
+}
+
+.formulario {
+    width: 100%;
+    text-align: center;
+}
+
+.form-control{
+    padding: 5px;
+}
+label{
+    margin: 10px;
+    padding: 10px;
+    font-weight: 500;
+    font-family: "Open Sans", Tahoma;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 20px;
+}
+.form-input {
+    width: 60%;
+    padding: 10px;
+    border: 1px solid #d3c9c9;
+    border-radius: 3px;
+    margin-left: 10px;
+}
+.btn-default{
+    padding: 10px;
+    background: transparent;
+    color: #333;
+    border: 1px solid #d3c9c9;
+    min-width: 200px;
+}
+.btn-default:hover{
+    padding: 10px;
+    background: #f2f2f2;
+    color: #333;
+}
+@media ( max-width: 480px){
+    #menu{
+        display: block;
+        width: 100%;
+    }
+    header{
+        .msg{
+            width: 90%;
+            margin: 0;
+            margin-left: 17px;
+            padding: 5px;
+        }
+        .max{
+            width: 100%;
+            text-align: center;
+        }
+    }
+    nav ul {
+        display: none;
+    }
+    .container{
+        width: 320px;
+        flex-wrap: wrap;
+    }
+    .logo{
+        width: 100%;
+        img{
+            width: 98%;
+        }
+    }
+    nav ul {
+        background: #fff;
+        width: 100%;
+        float: left;
+        li{
+            width: 100%;
+            display: block;
+            padding: 20px 0;   
+            float: left;
+        }
+    }
+}
+
+@media ( min-width: 481px) and ( max-width: 800px){
+    
+}

@@ -1,0 +1,33 @@
+#bola{
+    width: 60px;
+    animation-name: kikando;
+    animation-iteration-count: 2;
+    animation-duration: 1s;
+    position: relative;
+}
+@keyframes kikando{
+/*    from{
+        top: 0px;
+    }
+    to{
+        top: 100px;
+    }*/
+    
+    0% {top: 0;}
+    30%{
+        top: 100px;
+        
+    }
+    31%{
+        width: 60px;
+        height: 40px;
+    }
+    33%{
+        width: 60px;
+        height: 60px;
+    }
+    100%{top:0;
+        
+    }
+
+}

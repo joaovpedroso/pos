@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|Open+Sans:400,700,800');
+
+html, body{
+    width: 100%;
+    height: 100%;
+}
+
+body{
+    background: linear-gradient(to top, #c3c3c3, black );
+    color: #fff;
+    font-family: "Open Sans","Arial";
+}
+h1 {
+    text-shadow: 1px 1px 5px blue;
+}
+.foto {
+    width: 200px;
+    margin: 10px;
+}
+.foto1{
+    border-radius: 0px 50px 0px 50px;
+}
+.foto2{
+    border-radius: 100px;
+    height: 180px;
+    opacity: 0.5;
+}
+.foto3{
+    filter: sepia(70%);
+    transition: filter 1s;
+}
+.foto3:hover{
+    filter: sepia(0%);
+}
+.foto4{
+    filter: grayscale(100%);
+    transition: all 1s;
+}
+.foto4:hover{
+    filter: grayscale(0%);
+    transform: scale(2);
+}
+a {
+    background: #000;
+    color: #fff;
+    padding: 10px;
+    margin: 10px;
+    transition: all 0.3s;
+    float: left;
+}
+a:hover{
+    transform: scale(1.2);
+}
