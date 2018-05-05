@@ -1,0 +1,31 @@
+<form id="verificar">
+	<label>Ano</label>
+	<input type="number" name="ano" id="ano">
+	<button type="submit" id="verificar">Verificar</button>
+</form>
+<p id="resultado"></p>
+
+<script>
+
+window.onload = load;
+
+function load(){
+
+	formulario = document.getElementById('verificar');
+	formulario.addEventListener('submit', verificaAno);
+
+}
+
+function verificaAno(e){
+
+	var ano = document.getElementById('ano').value;
+	e.preventDefault();
+
+	if( ( ano % 4 == 0 ) && ( ano % 100 != 0 ) || ( ano % 400 == 0 ) ){
+		document.getElementById('resultado').innerHTML = 'Ano Bissexto';
+	}else{
+		document.getElementById('resultado').innerHTML = 'Ano Não Bissexto';
+	}
+}
+
+</script>

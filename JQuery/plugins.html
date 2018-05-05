@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Criando Plugins JQuery</title>
+	<script src='jquery-3.3.1.min.js'></script>
+	<script>
+		$(document).ready(function(){
+			/* 
+			$.fn.greenify = function(){
+				this.css("color", "green");
+				return this;
+			};
+			$('.greenify').greenify().css('background', 'black');
+			*/
+
+			//Definindo que a sintaxe jQuery também funcionará assim como o $
+			/* (function($){
+
+				$.fn.greenify = function(){
+
+					//Criação de variavel privada com a cor en Hexadecimal
+					var shade = "#556b2f";
+
+					this.css("color", shade);
+					return this;
+				};
+				$('.greenify').greenify().css('background', 'black');
+			}(jQuery));
+			*/
+
+			(function($){
+
+				$.fn.greenify = function(options){
+
+					//Recebendo parametros por JSON
+					var settings = $.extend({
+						color: '#556b2f',
+						background: 'white'
+					}, options);
+
+					
+					return this.css({
+						color: settings.color,
+						backgroundColor: settings.backgroundColor
+					});
+				};
+				$('.greenify').greenify({
+					color: "orange"
+				});
+
+
+				$.fn.legend = function(){
+					var legend = this.attr('alt');
+					$("<p>"+legend+"</p>").insertAfter(this);
+					return this;
+				};
+				$('#logo').legend();
+				
+				$.fn.alteracao = function(){
+					texto = this.text();
+					texto = texto.replace(/e/gi, 'enter').replace(/i/gi, 'inis').replace(/o/gi, 'omber').replace(/u/gi, 'ufter').replace(/a/gi, 'ais');
+					$('<p>'+texto+'</p>').insertAfter(this);
+					return this;
+				};
+				$('#texto').alteracao();
+			}(jQuery));
+
+
+		});
+
+
+	</script>
+</head>
+<body>
+<h1 class="greenify">Esquilo</h1>
+
+<img src="logo.png" alt="Logo Jquery" id="logo">
+<p id="texto">Eleouria</p>
+</body>
+</html>

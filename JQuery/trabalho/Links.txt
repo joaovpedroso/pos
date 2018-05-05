@@ -1,0 +1,11 @@
+MENU
+http://adnantopal.github.io/slimmenu/
+
+SLIDER
+http://kenwheeler.github.io/slick/
+
+VALIDAÇÃO DE FORMULARIO
+http://agenciaecode.com.br/club/js/jquery.form-validator.min.js
+
+IR AO TOPO
+http://agenciaecode.com.br/club/js/up_page.js

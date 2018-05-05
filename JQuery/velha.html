@@ -1,0 +1,98 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>Jogo da Velha</title>
+<style>
+td {
+    border: 1px solid #ccc;
+    font-size: 4em;
+    padding: 15px;
+    text-align: center;
+    font-family: Helvetica, sans-serif;
+    width: 100px;
+    height: 100px;
+}
+table {
+    border-collapse: collapse;
+    margin:auto;
+}
+</style>
+<script type="text/javascript" src="jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+
+	$('td').html('');
+
+	var jogador1 = 'X';
+	var jogador2 = 'O';
+	vez = 1;
+
+	$('td').click(function(){
+
+		console.log($(this).eq());
+
+		var navez = verificarJogador(vez);
+		if( navez == 1 ){
+			ponto = 'X';
+		}else {
+			ponto = 'O';
+		}
+
+		if( $(this).html() == '' ){
+			$(this).html( ponto );	
+		}
+		
+		ganhador();
+		vez +=1;
+	});
+
+
+	function verificarJogador(vez){
+		if( (vez % 2) == 0 ){
+			//console.log('Jogador 2');
+			return 2;
+		}else {
+			//console.log('Jogador 1');
+			return 1;
+		}
+	}
+
+
+	function ganhador(){
+
+		for( linha = 0; linha <= 2; linha++ ){
+			//var elementoLinha = $('tr').eq(linha).html();
+
+			if( ($('tr:eq(0) td:eq(0)').html()) == ( $('tr:eq(0) td:eq(1)').html() )
+			&&
+			($('tr:eq(0) td:eq(0)').html()) == ( $('tr:eq(0) td:eq(2)').html() )
+		 	){
+				console.log('Igual');
+			}
+
+			/*for( coluna = 0; coluna <= 2; coluna++ ){
+
+				var elementoColuna = $('td').eq(coluna).html();
+
+				var item = $('tr:eq('+linha+') td:eq('+coluna+')').html();
+				//console.log(linha +"-"+coluna);
+				console.log(item);
+			}*/
+
+		}
+	}
+
+
+});
+</script>
+</head>
+<body>
+<table cellspacing="0" cellpadding="0" id="t1">
+<tr><td>X</td><td>O</td><td>X</td></tr>
+<tr><td>O</td><td>X</td><td>O</td></tr>
+<tr><td>X</td><td>O</td><td>X</td></tr>
+</table>
+</body>
+</html>

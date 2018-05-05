@@ -1,0 +1,52 @@
+<script>
+
+window.onload = load;
+
+	function load(){
+		var isograma = document.getElementById('isograma');
+		isograma.addEventListener('submit', function(e){
+			e.preventDefault();
+			var palavra = document.getElementById('palavra').value;
+			document.getElementById('resultado').innerHTML = verificaIsograma(palavra);
+		});
+	}
+	
+
+	function verificaIsograma(palavra){
+
+		var size = palavra.length;
+		var igual = 0;
+		var repetida = '';
+		var	repetidas = [];
+
+		for(i = 0; i < size; i++ ){
+			letra = palavra.substr(i, 1).toLowerCase();
+
+			for( p = i+1; p < size; p++ ){
+
+				validar = palavra.substr(p,1).toLowerCase();
+				if( validar === letra ){
+					repetida = validar;
+					igual += 1;
+					repetidas[i] = letra;
+				}
+
+			}
+
+		}
+
+		if( igual >= 1 ){
+			//window.alert('FALSE - Repete a letra: '+repetida);
+			//window.alert('FALSE');
+			return 'False - Repete letras '+repetidas;
+		}else{
+			//window.alert('TRUE');
+			return 'True - Não repete letras';
+		}
+	}
+</script>
+<form id="isograma">
+	<input type="text" name="palavra" id="palavra" placeholder="Informe a palavra">
+	<button id="verificar" type="submit">Verificar</button>
+</form>
+<p id="resultado"></p>
