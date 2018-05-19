@@ -1,0 +1,82 @@
+*{border: 0; margin: 0; padding: 0;}
+.w-100{
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+.pad-top-10{padding-top: 10px;}
+.text-center{
+	text-align: center;
+}
+.head{
+	box-shadow: 0px 0.1px 8px black;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+.clear{
+	clear: both;
+}
+.nav{
+	background: #ccc;
+	margin-top: 10px!important;
+}
+.slimmenu{
+	width: 900px!important;
+}
+.slimmenu li {
+	cursor: pointer;
+}
+#slideshow{
+	width: 100%!important;
+	border: 0;
+}
+#slideshow ul{
+	width: 100%!important;
+}
+#slideshow ul li img{
+	width: 100%!important;
+}
+#pagination li a{
+	border: 1px solid;
+	border-radius: 100px;
+	background: #000;
+}
+#pagination .active{
+	background: blue!important;
+}
+.ug-arrow-right, .ug-arrow-left{
+	border: 1px solid;
+	border-radius: 100px;
+}
+.form input {
+	border: 1px solid #e4e4e4;
+	height: 30px;
+	width: 500px;
+	margin: 5px;
+	border-radius: 3px;
+}
+.form select {
+	border: 1px solid #e4e4e4;
+	height: 30px;
+	width: 500px;
+	margin: 5px;
+	border-radius: 3px;
+}
+.form button{
+	border: 1px solid #e4e4e4;
+	height: 30px;
+	margin: 5px;
+	margin-bottom: 20px;
+	padding-left: 100px;
+	padding-right: 100px;
+	border-radius: 3px;
+	text-align: center;
+}
+#back-top{
+	margin: 5px;
+	padding: 20px;
+	border-radius: 5px;
+	float: right;
+}
