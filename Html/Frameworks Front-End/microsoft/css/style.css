@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:300,400,800");
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0; }
+
+body {
+  font: 16px "Open Sans", Tahoma, Verdana;
+  color: #333;
+  overflow: hidden; }
+
+h1 {
+  text-align: center;
+  color: #333;
+  font-weight: 500; }
+
+section {
+  padding: 50px 0;
+  transition: 0.5s all; }
+
+main {
+  height: 100%;
+  margin-top: 60px;
+  overflow: scroll;
+  overflow-x: hidden; }
+
+.pad-top-20 {
+  padding-top: 20px; }
+
+#menu {
+  position: fixed;
+  top: 0;
+  z-index: 10; }
+
+.navbar {
+  box-shadow: 1px 1px 6px #333; }
+
+.nav-link {
+  color: #333;
+  margin-left: 5px; }
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  background: transparent;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  transition: 0.5s all;
+  color: #333;
+  border-radius: 0; }
+
+.content-box {
+  margin-top: 10px;
+  margin-bottom: 20px; }
+
+#fundador-section {
+  /*background: $cor3;*/
+  background: url("../imagens/bg-image.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  color: #f1f1f1; }
+
+#fundador {
+  color: #f1f1f1; }
+
+.section-form-content {
+  padding-top: 150px; }
+
+/*# sourceMappingURL=style.css.map */

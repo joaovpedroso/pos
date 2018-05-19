@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,800');
+body{
+	padding-top: 76px;
+	font-family: "Open Sans";
+	overflow-x: hidden;
+}
+h1{
+	color: #00a3d9;
+	margin: 25px;
+	font-size: 2em;
+	font-weight: 800;
+}
+.font-10{font-size: 10px!important;}
+.mar-top-45{margin-top: 45px;}
+.navbar-light{
+	/*box-shadow: 2px 2px 5px rgba(0,0,0,0.2);*/
+	border-bottom: 3px solid #4dd2ff;
+	background: #FFF!important;
+}
+.nav-item{
+    transition: 4s ease-in-out;
+    font-weight: 500;
+}
+.nav-link:hover{
+	color: #4dd2ff!important;
+}
+.nav-link:active{
+	color: #4dd2ff!important;
+}
+.active{
+	color: #4dd2ff!important;
+}
+.dropdown:hover>.dropdown-menu{
+	display: block
+}
+.dropdown-menu{
+	margin-top: 10px;
+}
+.carousel-inner{
+	background: #000;
+}
+.carousel-inner .carousel-item img{
+	opacity: 0.6;
+}
+.carousel-indicators li{
+	height: 6px;
+	width: 6px;
+	border-radius: 100%;
+}
+.carousel-caption{
+	background: rgba(255,255,255,0.2);
+}
+#depoimentos {
+	background: url(../imagens/depoimento.jpg) fixed;
+	background-size: cover;
+	padding: 50px 0;
+}
+#depoimentos p {
+	font-size: 1.3em;
+	color: #FFF;
+	margin: 50px;
+}
+#depoimentos img{
+	border: 5px solid #fff;
+	width: 150px;
+}
+#news, #cursos{
+	padding: 50px 0;
+}
+.card{
+	margin-bottom: 10px;
+}
+.card .card-title, .card p{
+	height: 50px;
+	overflow: hidden;
+}
+/*.card:hover .btn-ver-curso{
+	display: block;
+}*/
+.btn-ver-curso{
+	/*display: none;*/
+	border-radius: 0;
+	box-shadow: 0px 1px 6px #0374eef5;
+}
+footer{
+	color: #fff;
+	padding: 20px 0;
+	font-size: 0.9em;
+}
+footer i{
+	margin: 10px;
+	font-size: 4em;
+}
+footer a {
+	color: #fff;
+	margin-left: 10px;
+	transition: all 0.5s;
+}
+footer a:hover{
+	color: #4dd2ff;
+	text-decoration: none;
+}
+hr{
+	border: 1px solid #fff;
+}
+.social-icon{
+	font-size: 25px;
+}
+.content-box{
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
