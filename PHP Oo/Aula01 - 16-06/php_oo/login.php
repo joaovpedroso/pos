@@ -6,12 +6,14 @@ declare (strict_types = 1);
 require_once '../../class/Admin.php';
 
 //Instanciando Novo Objeto
-$u = new Admin("jao.victor.dp@gmail.com", "md5");
-//$u->email = "jao.victor.dp@gmail.com";
-//$u->senha = "md5";
+$a = new Admin("jao.victor.dp@gmail.com", "md5", 7829);
+$u = new Usuario("jao.victor.dp@gmail.com", "md5");
 
+//Destruindo o objeto
+$u = NULL;
+
+Usuario::log('Usuario::Log');
+
+var_dump($a);
+print "<br>";
 var_dump($u);
-
-if ($u->autenticar()) {
-    print "Ok";
-}
