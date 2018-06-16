@@ -1,6 +1,6 @@
-#Programação Orientada a Objetos - <strong>PHP</strong>
+<h1>Programação Orientada a Objetos - <strong>PHP</strong></h1>
 
-##Estrutura OO
+<h3>Estrutura OO</h3>
   Class
   Log
   Public
@@ -8,16 +8,16 @@
 	- JS
 	- Images
 
-##Rotina de Execução
+<h3>Rotina de Execução</h3>
 Browser -> Requisição -> Processamento -> Resultado
 
-###$this - "Este" atributos da própria classe
-###self - Métodos e Atributos estáticos da própria classe
+<h5>$this - "Este" atributos da própria classe</h5>
+</h5>self - Métodos e Atributos estáticos da própria classe</h5>
 
-###Strict Types = Habilitar a definição de tipo das variaveis - Obrigatoriedade
-###Sobrescrita = Inválidar um método reescrevendo-o
-###Atributo Estático(static) - Atributo da Classe não do objeto
+<h5>Strict Types = Habilitar a definição de tipo das variaveis - Obrigatoriedade</h5>
+<h5>Sobrescrita = Inválidar um método reescrevendo-o</h5>
+<h5>Atributo Estático(static) - Atributo da Classe não do objeto</h5>
 
-##Classe para datas
+<h3>Classe para datas</h3>
 	$date = new <a href="http://php.net/manual/pt_BR/class.datetime.php">DateTime();</a>
 	$date ->format('Y-m-d');
